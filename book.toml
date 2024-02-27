@@ -1,0 +1,6 @@
+[book]
+authors = ["J210172"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Tema 3 SGBD"
