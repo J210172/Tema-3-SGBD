@@ -17,6 +17,33 @@ Tambien son capaces de "devolver" un resultado a partir de escribir en un argume
 
 Los procedimientos se invocan con la sentencia `CALL`
 
+
+## Definicion de la estructura de creación
+
+```sql
+CREATE
+    [OR REPLACE]
+    [DEFINER = { user | CURRENT_USER | role | CURRENT_ROLE }]
+    PROCEDURE [IF NOT EXISTS] sp_name ([proc_parameter[,...]])
+    [characteristic ...] routine_body
+
+proc_parameter:
+    [ IN | OUT | INOUT ] param_name type
+
+type:
+    Any valid MariaDB data type
+
+characteristic:
+    LANGUAGE SQL
+  | [NOT] DETERMINISTIC
+  | { CONTAINS SQL | NO SQL | READS SQL DATA | MODIFIES SQL DATA }
+  | SQL SECURITY { DEFINER | INVOKER }
+  | COMMENT 'string'
+
+routine_body:
+    Valid SQL procedure statement
+```
+
 ## Ejemplos
 
 Procedimiento que calcula el área del círculo a partir del radio
@@ -46,28 +73,27 @@ CALL p_areacirculo(@r, @a); /**/
 SELECT @a; /*12.566370614359172*/
 ```
 
-## Definicion de la estructura de creación
+
+## Ejercicios
+
+Procedimiento que calcula la cantida de empleados con el mismo genero.
 
 ```sql
-CREATE
-    [OR REPLACE]
-    [DEFINER = { user | CURRENT_USER | role | CURRENT_ROLE }]
-    PROCEDURE [IF NOT EXISTS] sp_name ([proc_parameter[,...]])
-    [characteristic ...] routine_body
 
-proc_parameter:
-    [ IN | OUT | INOUT ] param_name type
+DELIMITER //
 
-type:
-    Any valid MariaDB data type
+CREATE OR REPLACE PROCEDURE contar_genero(IN gend VARCHAR(50), OUT total INT UNSIGNED)
+BEGIN
+  SET total = (
+    SELECT COUNT(*) 
+    FROM employees 
+    WHERE gender = gend);
+END
+//
 
-characteristic:
-    LANGUAGE SQL
-  | [NOT] DETERMINISTIC
-  | { CONTAINS SQL | NO SQL | READS SQL DATA | MODIFIES SQL DATA }
-  | SQL SECURITY { DEFINER | INVOKER }
-  | COMMENT 'string'
+DELIMITER ;
 
-routine_body:
-    Valid SQL procedure statement
 ```
+
+
+
