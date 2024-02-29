@@ -22,7 +22,10 @@
 
 # Otras utilidades
 
-
 - [LOAD DATA](Otros/LoadData.md)
 
 - [SHOW](Otros/Show.md)
+
+# Examenes
+
+- [Examen J210172](Examenes/ExamenASGBD-J210172.md)
