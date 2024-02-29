@@ -1,6 +1,6 @@
 # Contador WHILE
 
-El while es una sentecia que ejecuta un bloque de codigo siempre que se cumpla una condicion.
+El `while` es una sentecia que ejecuta un bloque de codigo siempre que se cumpla una condicion.
 
 
 El while se escribiria asi:

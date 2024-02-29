@@ -1,6 +1,6 @@
 # Sentencia IF
 
-El if es una sentencia que permite ejecutar una bloque de codigo solo si se cumple su condicion
+El `if` es una sentencia que permite ejecutar una bloque de codigo solo si se cumple su condicion
 
 La sentencia if se escribe asi:
 
