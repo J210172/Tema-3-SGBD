@@ -15,10 +15,12 @@ Puedes pasarles un valor con un argumento con el modo 'IN' o 'INOUT'.
 
 Tambien son capaces de "devolver" un resultado a partir de escribir en un argumento con el modo 'OUT' o 'INOUT'.
 
-Los procedimientos se invocan con la sentencia `CALL`
+Los procedimientos se invocan con la sentencia `CALL proced_name([parameter[, ...]])`
 
 
-## Definicion de la estructura de creación
+## Definicion de las estructuras
+
+### Estructura de creación
 
 ```sql
 CREATE
@@ -42,6 +44,23 @@ characteristic:
 
 routine_body:
     Valid SQL procedure statement
+```
+
+### Estructura de modificación
+
+```sql
+ALTER PROCEDURE proc_name [characteristic ...]
+
+characteristic:
+    { CONTAINS SQL | NO SQL | READS SQL DATA | MODIFIES SQL DATA }
+  | SQL SECURITY { DEFINER | INVOKER }
+  | COMMENT 'string'
+```
+
+### Estructura de eliminación
+
+```sql
+DROP PROCEDURE [IF EXISTS] sp_name
 ```
 
 ## Ejemplos

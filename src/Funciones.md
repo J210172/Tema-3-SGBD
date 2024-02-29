@@ -3,6 +3,57 @@
 Las funciones son estructuras que sirven para reusar bloque de codigo, a las cuales se le pueden pasar argumentos, y pueden devolver algo.
 
 
+## Definicion de las extructuras
+
+### Estructura de creacion
+
+```sql
+CREATE [OR REPLACE]
+    [DEFINER = {user | CURRENT_USER | role | CURRENT_ROLE }]
+    [AGGREGATE] FUNCTION [IF NOT EXISTS] func_name ([func_parameter[,...]])
+    RETURNS type
+    [characteristic ...]
+    RETURN func_body
+
+
+func_parameter:
+    [ IN | OUT | INOUT | IN OUT ]  param_name type
+
+
+type:
+    Any valid MariaDB data type
+
+
+characteristic:
+    LANGUAGE SQL
+  | [NOT] DETERMINISTIC
+  | { CONTAINS SQL | NO SQL | READS SQL DATA | MODIFIES SQL DATA }
+  | SQL SECURITY { DEFINER | INVOKER }
+  | COMMENT 'string'
+
+
+func_body:
+    Valid SQL procedure statement
+```
+
+### Estructura de modificación
+
+```sql
+ALTER FUNCTION func_name [characteristic ...]
+
+characteristic:
+    { CONTAINS SQL | NO SQL | READS SQL DATA | MODIFIES SQL DATA }
+  | SQL SECURITY { DEFINER | INVOKER }
+  | COMMENT 'string'
+```
+
+### Estructura de eliminación
+
+```sql
+DROP FUNCTION [IF EXISTS] function_name
+```
+
+
 ## Ejemplo
 
 ```sql
@@ -97,35 +148,4 @@ END//
 DELIMITER ;
 ```
 
-
-## Definicion de la extructura de creacion
-
-```sql
-CREATE [OR REPLACE]
-    [DEFINER = {user | CURRENT_USER | role | CURRENT_ROLE }]
-    [AGGREGATE] FUNCTION [IF NOT EXISTS] func_name ([func_parameter[,...]])
-    RETURNS type
-    [characteristic ...]
-    RETURN func_body
-
-
-func_parameter:
-    [ IN | OUT | INOUT | IN OUT ]  param_name type
-
-
-type:
-    Any valid MariaDB data type
-
-
-characteristic:
-    LANGUAGE SQL
-  | [NOT] DETERMINISTIC
-  | { CONTAINS SQL | NO SQL | READS SQL DATA | MODIFIES SQL DATA }
-  | SQL SECURITY { DEFINER | INVOKER }
-  | COMMENT 'string'
-
-
-func_body:
-    Valid SQL procedure statement
-```
 
