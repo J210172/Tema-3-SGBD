@@ -28,4 +28,7 @@
 
 # Examenes
 
+- [Script Base de Datos](Examenes/ScriptDBExamen.md)
 - [Examen J210172](Examenes/ExamenASGBD-J210172.md)
+
+
