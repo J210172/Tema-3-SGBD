@@ -2,6 +2,12 @@
 
 Las funciones son estructuras que sirven para reusar bloque de codigo, a las cuales se le pueden pasar argumentos, y pueden devolver algo.
 
+Se invocan de usando `SELECT`
+
+```sql
+SELECT Mi_Funcion();
+```
+
 
 ## Definicion de las extructuras
 

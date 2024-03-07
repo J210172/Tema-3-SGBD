@@ -1,5 +1,6 @@
 
-- [Introduccion](../README.md)
+[Introduccion](../README.md)
+
 
 # Contenido
 
@@ -20,15 +21,24 @@
 
 - [Eventos](Eventos.md)
 
+
 # Otras utilidades
 
 - [LOAD DATA](Otros/LoadData.md)
 
 - [SHOW](Otros/Show.md)
 
+- [SINGAL](Otros/Signal.md)
+ 
+- [HANDLER](Otros/Handler.md)
+
+- [Operacions con Fechas](Otros/DateTimeOps.md)
+
+
 # Examenes
 
 - [Script Base de Datos](Examenes/ScriptDBExamen.md)
+
 - [Examen J210172](Examenes/ExamenASGBD-J210172.md)
 
 
