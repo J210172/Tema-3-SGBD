@@ -34,7 +34,7 @@ error_property_name:
 ```
 
 
-## Ejeplos
+## Ejemplos
 
 ```sql
 DELIMITER //

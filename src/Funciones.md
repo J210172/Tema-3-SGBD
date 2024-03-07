@@ -60,7 +60,7 @@ DROP FUNCTION [IF EXISTS] function_name
 ```
 
 
-## Ejemplo
+## Ejemplos
 
 ```sql
 DELIMITER //
